@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,9 +9,11 @@
   --bege: #DCDDBA;
   --laranja-claro: #f49237;
   --laranja-escuro: #fd7a00;
-  --laranja: #e17614;
+  --laranja: #fc7a01;
   --preto: #171717;
   --vermelho: #d31e06;
+  --vermelho-escuro: #b11804;
+  --vermelho-claro: #e05b49;
   --azul: #063dac;
 }
 
@@ -26,4 +28,60 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.autoescola{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.questionario{
+  display: grid;
+}
+
+.titulo{
+  font-family: "Paytone One", serif;
+  letter-spacing: 2px;
+}
+
+.menu:hover{
+  background-color: var(--vermelho);
+}
+.menu:hover ul{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: -2px;
+  background-color: var(--vermelho-escuro);
+  font-size: .9em;
+  border: solid 2px black;
+  width: 102.5%;
+  border-top: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--preto);        /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--vermelho);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+@media screen and (min-width:1024px){
+  .questionario{
+    grid-template-columns: 1fr 350px;
+  }
+}
+@media screen and (min-width:1440px){
+  .questionario{
+    padding: 0 4em;
+  }
 }
