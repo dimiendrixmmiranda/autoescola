@@ -5,11 +5,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --laranja-escuro: #ff8c08;
-  --laranja: #FFB208;
-  --laranja-claro: #fab05b;
-  --vermelho: #E31119;
-  --azul: #3C4ED4;
+  --branco: #FFFFFF;
+  --bege: #DCDDBA;
+  --laranja-claro: #f49237;
+  --laranja-escuro: #fd7a00;
+  --laranja: #e17614;
+  --preto: #171717;
+  --vermelho: #d31e06;
+  --azul: #063dac;
 }
 
 @media (prefers-color-scheme: dark) {
