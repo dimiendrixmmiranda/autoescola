@@ -92,7 +92,7 @@ export default function Page() {
                                             <p>{questao.justificativaResposta}. <b>Alternativa correta: {definirLetraAlternativa(questao.alternativas.findIndex(alternativa => alternativa.certa))}</b></p>
                                         </div>
                                         <div className='absolute top-1 right-2'>
-                                            <p className='text-[.7em] capitalize'>{questao.categoria}</p>
+                                            <p className='text-[.7em] capitalize'>{questao.categoria.replace('-', ' ')}</p>
                                         </div>
                                     </li>
                                 )

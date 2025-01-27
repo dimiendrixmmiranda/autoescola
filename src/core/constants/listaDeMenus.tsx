@@ -1,6 +1,7 @@
 import { FaBookOpen, FaHouse, FaLightbulb, FaTrophy } from "react-icons/fa6";
 import { MdOutlineHelp } from "react-icons/md";
 import Menu from "../menu/Menu";
+import { createSlugWithId } from "@/utils/createSlug";
 
 export const listaDeMenus: Menu[] = [
     {
@@ -16,23 +17,23 @@ export const listaDeMenus: Menu[] = [
         submenu: [
             {
                 titulo: 'Legislação de Trânsito',
-                link: `/categoria`,
+                link: `/categorias/${createSlugWithId('legislacao', 1)}`,
             },
             {
                 titulo: 'Sinalização',
-                link: `/categoria/`,
+                link: `/categorias/${createSlugWithId('sinalizacao', 2)}`,
             },
             {
                 titulo: 'Direção Defensiva',
-                link: `/categoria/`,
+                link: `/categorias/${createSlugWithId('direcao-defensiva', 3)}`,
             },
             {
                 titulo: 'Mecânica Básica',
-                link: `/categoria/`,
+                link: `/categorias/${createSlugWithId('mecanica-basica', 4)}`,
             },
             {
                 titulo: 'Primeiros Socorros',
-                link: `/categoria/`,
+                link: `/categorias/${createSlugWithId('primeiros-socorros', 5)}`,
             },
         ]
     },

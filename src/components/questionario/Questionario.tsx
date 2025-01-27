@@ -53,7 +53,6 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
         const novaResposta = [...respostas];
         novaResposta[indexQuestaoAtual] = alternativaSelecionada.conteudo;
         setRespostas(novaResposta);
-        console.log(respostas)
     }
 
     function handleFinalizar() {
@@ -67,6 +66,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
         localStorage.setItem("acertosQuiz", acertos.toString());
         router.push("/finalizarQuestionario");
     }
+
 
     return (
         <div className="flex flex-col gap-4 w-full h-full p-4 text-black bg-zinc-200 lg:grid lg:grid-cols-2 lg:p-8">
@@ -103,7 +103,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                             <li
                                 key={i}
                                 onClick={() => handleSelecionarAlternativa(i)}
-                                className={`cursor-pointer p-2 rounded ${alternativaSelecionada === i ? "bg-[--laranja-claro] border border-black text-white font-bold" : ""
+                                className={`cursor-pointer p-2 rounded border border-black ${alternativaSelecionada === i ? "bg-[--laranja-claro] text-white font-bold" : "bg-[--bege]"
                                     }`}
                             >
                                 <p>
@@ -126,7 +126,6 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                                 ) ?? null
                             );
                         }}
-                        disabled={indexQuestaoAtual === 0}
                         style={{ boxShadow: '0 0 1px 2px black' }}
                     >
                         Anterior
@@ -142,7 +141,6 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                                 ) ?? null
                             );
                         }}
-                        disabled={indexQuestaoAtual === questionarioAlterado.length - 1}
                         style={{ boxShadow: '0 0 1px 2px black' }}
                     >
                         Próximo
@@ -150,7 +148,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                 </div>
             </div>
             {/* Lista de perguntas por botao */}
-            <div className="max-w-[350px] rounded-lg h-fit w-full mx-auto bg-[--preto] p-2 flex flex-col gap-3 lg:m-0 lg:ml-auto lg:p-4" style={{ boxShadow: '0px 0px 1px 2px black' }}>
+            <div className="max-w-[350px] rounded-lg h-fit w-full mx-auto bg-[--preto] p-2 flex flex-col gap-5 lg:m-0 lg:ml-auto lg:p-4" style={{ boxShadow: '0px 0px 1px 2px black' }}>
                 <h2 className="uppercase font-black text-4xl text-center text-white" style={{textShadow: '1px 1px 2px black'}}>{formatarTempo(relogio)}</h2>
                 <p className="text-center font-semibold leading-4 text-white -mt-2">Mínimo necessário para a aprovação: 21 Questões!</p>
                 <ul className="grid grid-cols-5 gap-2">
@@ -164,7 +162,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                             return (
                                 <li key={i} className="flex justify-center items-center">
                                     <button
-                                        className="h-[45px] w-[45px] rounded-full overflow-hidden bg-[--laranja-claro] font-bold text-white"
+                                        className={`h-[45px] w-[45px] rounded-full overflow-hidden font-bold text-white ${i === indexQuestaoAtual ? 'bg-orange-600': 'bg-[--laranja-claro]'}`}
                                         style={{ textShadow: '1px 1px 2px black' }}
                                         onClick={() => {
                                             handleNavegarQuestao(i, setIndexQuestaoAtual);
@@ -176,7 +174,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                                         }}>
                                         {
                                             letraResposta ?
-                                                <div className="relative w-full h-full flex justify-center items-center">
+                                                <div className="relative w-full h-full flex justify-center items-center bg-green-600">
                                                     <p>{letraResposta}</p>
                                                     <p className="absolute top-2 right-[.7em] text-[.6em]">{i + 1}</p>
                                                 </div>
@@ -192,7 +190,6 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
                 <div>
                     <button onClick={handleFinalizar} className="w-full bg-red-600 text-white uppercase font-bold text-center py-2">Terminar Prova!</button>
                 </div>
-
             </div>
         </div>
     );

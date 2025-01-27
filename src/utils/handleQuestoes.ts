@@ -6,6 +6,8 @@ function handlePerguntaAnterior(
 ): void {
     if (indexQuestaoAtual > 0) {
         setIndexQuestaoAtual(prevIndex => prevIndex - 1);
+    }else {
+        setIndexQuestaoAtual(29)
     }
 }
 
@@ -17,7 +19,7 @@ function handlePerguntaProxima(
     if (indexQuestaoAtual < arrayDeQuestoes.length - 1) {
         setIndexQuestaoAtual(prevIndex => prevIndex + 1);
     } else {
-        alert("Fim do quiz!");
+        setIndexQuestaoAtual(0)
     }
 }
 
@@ -27,6 +29,7 @@ function handleNavegarQuestao(
 ): void {
     setIndexQuestaoAtual(index);
 }
+
 
 export {
     handlePerguntaProxima,

@@ -1,0 +1,29 @@
+.menu li:hover{
+    background-color: var(--bege);
+    color: var(--laranja-escuro);
+}
+.menu li div ul {
+    display: none;
+}
+
+.menu li div:hover ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--preto);
+    gap: .5em;
+    color: white;
+}
+
+.menu li div ul li {
+    padding: .3em;
+    font-size: 1em;
+    line-height: 20px;
+}
+
+.menu li div:hover ul li:hover {
+    color: white;
+    color: var(--laranja-escuro);
+    background-color: var(--bege);
+    font-weight: bold;
+}

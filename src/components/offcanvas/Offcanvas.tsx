@@ -1,9 +1,11 @@
-
+'use client'
 import React, { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 import { GiHamburgerMenu } from 'react-icons/gi';
-
+import { listaDeMenus } from '@/core/constants/listaDeMenus';
+import styles from './style.module.css'
+import Link from 'next/link';
 export default function Offcanvas() {
     const [visibleLeft, setVisibleLeft] = useState(false);
 
@@ -15,13 +17,47 @@ export default function Offcanvas() {
                 </Button>
             </div>
 
-            <Sidebar className='bg-red-800 w-full h-full' visible={visibleLeft} position="left" onHide={() => setVisibleLeft(false)}>
-                <div>
-                    <h2>Left Sidebar</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+            <Sidebar className='bg-[--bege] text-black w-full h-full p-4' visible={visibleLeft} position="left" onHide={() => setVisibleLeft(false)}>
+                <div className='flex flex-col gap-4'>
+                    <h2 className='uppercase font-bold text-3xl'>Menu</h2>
+                    <ul className='flex flex-col items-start gap-2'>
+                        {
+                            listaDeMenus.map((menu, i) => {
+                                return (
+                                    <li key={i}>
+                                        {
+                                            menu.link === '' ? (
+                                                <div className={`cursor-pointer relative ${styles.offcanvasMenu}`}>
+                                                    <div className="flex gap-2 items-center justify-start px-2 py-1 text-xl font-bold">
+                                                        {menu.icone}
+                                                        <p>{menu.titulo}</p>
+                                                    </div>
+                                                    <ul className='hidden flex-col ml-7'>
+                                                        {
+                                                            menu.submenu?.map((sub, j) => {
+                                                                return (
+                                                                    <li key={j}>
+                                                                        <Link href={sub.link}>
+                                                                            <p className='px-2 py-1 font-bold'>{sub.titulo}</p>
+                                                                        </Link>
+                                                                    </li>
+                                                                )
+                                                            })
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            ) : (
+                                                <Link href={menu.link} className="flex gap-2 items-center justify-center px-2 py-1 text-xl font-bold">
+                                                    {menu.icone}
+                                                    <p>{menu.titulo}</p>
+                                                </Link>
+                                            )
+                                        }
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
                 </div>
             </Sidebar>
         </div>

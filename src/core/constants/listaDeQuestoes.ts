@@ -172,7 +172,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "Qual a função do sistema de suspensão de um veículo?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Ajustar a pressão dos pneus.", certa: false },
             { conteudo: "Absorver os impactos da estrada e melhorar o conforto.", certa: true },
@@ -188,7 +188,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "O que pode causar o desgaste prematuro dos pneus?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Inflar os pneus acima da pressão recomendada.", certa: false },
             { conteudo: "Conduzir com excesso de carga.", certa: true },
@@ -204,7 +204,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "O que caracteriza um problema no sistema de freios de um veículo?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Ruído ao frear e dificuldade para o carro parar.", certa: true },
             { conteudo: "Vibração no volante.", certa: false },
@@ -220,7 +220,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "O que deve ser verificado periodicamente no motor de um veículo?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "O nível de óleo e a temperatura.", certa: true },
             { conteudo: "A cor da pintura.", certa: false },
@@ -236,7 +236,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "Qual é a função do alternador em um veículo?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Recarregar a bateria do carro enquanto o motor está em funcionamento.", certa: true },
             { conteudo: "Garantir o funcionamento do sistema de ar condicionado.", certa: false },
@@ -252,7 +252,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "Quando deve ser feita a troca do filtro de óleo do motor?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "A cada 5.000 km ou conforme orientação do fabricante.", certa: true },
             { conteudo: "A cada 10.000 km, independentemente do uso.", certa: false },
@@ -268,7 +268,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "O que pode indicar um problema no sistema de arrefecimento do motor?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Aquecimento excessivo do motor e luz de alerta acesa.", certa: true },
             { conteudo: "Vibração ao acelerar.", certa: false },
@@ -284,7 +284,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "Para que serve o sistema de escapamento de um veículo?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Reduzir a emissão de gases poluentes e reduzir o ruído do motor.", certa: true },
             { conteudo: "Garantir a lubrificação do motor.", certa: false },
@@ -300,7 +300,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "Quando a correia dentada de um motor deve ser substituída?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "A cada 30.000 km.", certa: false },
             { conteudo: "A cada 100.000 km ou conforme recomendação do fabricante.", certa: true },
@@ -316,7 +316,7 @@ const listaDeQuestoes: Questao[] = [
         pergunta: {
             enunciado: "Qual é a função do sistema de direção de um veículo?",
         },
-        categoria: 'mecanica',
+        categoria: 'mecanica-basica',
         alternativas: [
             { conteudo: "Controlar a velocidade do veículo.", certa: false },
             { conteudo: "Permitir que o motorista direcione as rodas do veículo.", certa: true },
