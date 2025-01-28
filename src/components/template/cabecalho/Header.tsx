@@ -6,7 +6,7 @@ import style from './style.module.css'
 
 export default function Header() {
     return (
-        <header className="bg-[--preto] p-4 flex w-full h-full">
+        <header className="bg-[--preto] p-4 flex w-full h-full" id="topo">
             <Link href={'/'} className="titulo flex items-center gap-2">
                 <div className="relative w-[70px] h-[30px] lg:h-[50px] lg:w-[95px]">
                     <Image alt="Carro Logo do site" src={'/default/carro.png'} fill className="object-cover"></Image>

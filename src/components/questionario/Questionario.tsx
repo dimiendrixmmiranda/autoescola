@@ -64,6 +64,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
         const acertos = resultado.filter(questao => questao.acertou).length;
         localStorage.setItem("resultadoQuiz", JSON.stringify(resultado));
         localStorage.setItem("acertosQuiz", acertos.toString());
+        localStorage.setItem("tempoDeProva", formatarTempo(relogio));
         router.push("/finalizarQuestionario");
     }
 

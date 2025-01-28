@@ -13,6 +13,13 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    screens: {
+      sm: '425px',  // Pequenos dispositivos
+      md: '768px',  // Tablets
+      lg: '1024px', // Laptops
+      xl: '1280px', // Monitores maiores
+      '2xl': '1536px',
+    },
   },
   plugins: [],
 } satisfies Config;

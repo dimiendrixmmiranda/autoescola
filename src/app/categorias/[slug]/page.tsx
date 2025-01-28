@@ -17,8 +17,6 @@ export default function Page() {
         setArrayDeQuestoes(listaDeQuestoes.filter(questao => questao.categoria.toLowerCase() === categoria?.toLowerCase()))
     }, [categoria])
 
-    console.log(arrayDeQuestoes)
-
     return (
         <Template>
             <div className="w-full h-full">

@@ -11,7 +11,7 @@
   --bege: #DDDEBB;
   --laranja-claro: #F19335;
   --laranja-escuro: #E47713;
-  --preto: #171717; 
+  --preto: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,4 +29,8 @@ body {
 
 .titulo {
   font-family: 'Bebas Neue', serif;
+}
+
+* {
+  scroll-behavior: smooth;
 }
