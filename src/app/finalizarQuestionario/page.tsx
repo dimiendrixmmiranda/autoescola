@@ -3,6 +3,7 @@
 import Template from '@/components/template/Template';
 import Questao from '@/core/questao/Questao';
 import definirLetraAlternativa from '@/utils/definirLetraAlternativa';
+import { formatarTempo } from '@/utils/formatarTempo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -20,17 +21,18 @@ export default function Page() {
     const [tempoDeProva, setTempoDeProva] = useState('')
     const router = useRouter();
 
+    console.log(tempoDeProva)
     useEffect(() => {
         const storedResultados = localStorage.getItem("resultadoQuiz");
         const storedAcertos = localStorage.getItem("acertosQuiz");
         const tempoDeProva = localStorage.getItem("tempoDeProva");
+
 
         if (storedResultados && storedAcertos && tempoDeProva) {
             const resultadosCarregados = JSON.parse(storedResultados)
             setResultados(resultadosCarregados)
             setAcertos(parseInt(storedAcertos, 10))
             setTempoDeProva(tempoDeProva)
-            console.log(tempoDeProva)
             // Atualiza as categorias diretamente após carregar os resultados
             setQuestoesDirecaoDefensiva(resultadosCarregados.filter((cat: Questao) => cat.categoria === 'direcao-defensiva'));
             setQuestoesSinalizacao(resultadosCarregados.filter((cat: Questao) => cat.categoria === 'sinalizacao'));
@@ -72,9 +74,9 @@ export default function Page() {
                 <div className='bg-[--preto] p-4 h-fit lg:col-start-1 lg:col-end-2 lg:row-start-2'>
                     <div className='flex flex-col gap-2'>
                         <h3 className='text-2xl text-center font-bold'>Estatísticas</h3>
-                        <div className='text-xl' style={{ display: 'grid', gridTemplateColumns: '1fr 60px' }}>
+                        <div className='text-lg' style={{ display: 'grid', gridTemplateColumns: '1fr 120px' }}>
                             <h4>Tempo de Prova:</h4>
-                            <p>{tempoDeProva}</p>
+                            <p className='text-center'>{formatarTempo(3000 - parseInt(tempoDeProva))} - 50:00</p>
                         </div>
                         <ul className='flex flex-col gap-3 sm:grid sm:grid-cols-2 lg:grid-cols-1'>
                             {

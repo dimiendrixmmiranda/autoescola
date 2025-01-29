@@ -22,7 +22,7 @@ export default function Header() {
                                 {
                                     menu.link === '' ? (
                                         <div className="cursor-pointer relative">
-                                            <div className="flex gap-1 items-center justify-center px-2 py-1 lg:text-lg lg:font-bold xl:text-xl">
+                                            <div className="flex gap-1 items-center justify-center px-3 py-1 lg:text-lg lg:font-bold">
                                                 {menu.icone}
                                                 <p>{menu.titulo}</p>
                                             </div>

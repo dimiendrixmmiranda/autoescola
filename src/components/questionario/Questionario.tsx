@@ -2,6 +2,7 @@
 import Questao from "@/core/questao/Questao";
 import definirLetraAlternativa from "@/utils/definirLetraAlternativa";
 import { embaralharPerguntas } from "@/utils/embaralhar";
+import { formatarTempo } from "@/utils/formatarTempo";
 import { handleNavegarQuestao, handlePerguntaAnterior, handlePerguntaProxima } from "@/utils/handleQuestoes";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -31,11 +32,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
         return () => clearInterval(timer)
     }, [relogio])
 
-    const formatarTempo = (seconds: number) => {
-        const minutes = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
-    };
+    
 
     function handleSelecionarAlternativa(optionIndex: number): void {
         setAlternativaSelecionada(optionIndex);
@@ -64,7 +61,7 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
         const acertos = resultado.filter(questao => questao.acertou).length;
         localStorage.setItem("resultadoQuiz", JSON.stringify(resultado));
         localStorage.setItem("acertosQuiz", acertos.toString());
-        localStorage.setItem("tempoDeProva", formatarTempo(relogio));
+        localStorage.setItem("tempoDeProva", relogio.toString());
         router.push("/finalizarQuestionario");
     }
 

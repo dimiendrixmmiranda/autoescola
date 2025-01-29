@@ -13,6 +13,7 @@
     background-color: var(--preto);
     gap: .5em;
     color: white;
+    z-index: 20;
 }
 
 .menu li div ul li {
