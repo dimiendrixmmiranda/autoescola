@@ -17,6 +17,7 @@ Acesse o site ao vivo: [AutoEscola](https://autoescola-alpha.vercel.app/)
 - Questionários específicos para cada matéria(Legislação de trânsito, Sinalização, Direção defensiva, Mecânica Básica e Primeiros Socorros)
 - Uma plataforma acessível e intuitiva, projetada para facilitar o uso.
 - Ao final da prova, é gerada uma página que apresenta detalhes como o tempo total, a quantidade de acertos gerais e o desempenho específico em cada matéria.
+- Conteudo de estudos específico para cada matéria
 
 
 ## 🛠️ Tecnologias Utilizadas
