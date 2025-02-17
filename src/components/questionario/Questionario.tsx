@@ -1,7 +1,6 @@
 'use client';
 import Questao from "@/core/questao/Questao";
 import definirLetraAlternativa from "@/utils/definirLetraAlternativa";
-import { embaralharPerguntas } from "@/utils/embaralhar";
 import { formatarTempo } from "@/utils/formatarTempo";
 import { handleNavegarQuestao, handlePerguntaAnterior, handlePerguntaProxima } from "@/utils/handleQuestoes";
 import Image from "next/image";
@@ -14,7 +13,7 @@ interface QuestionarioProps {
 export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
     const [indexQuestaoAtual, setIndexQuestaoAtual] = useState(0);
     const [alternativaSelecionada, setAlternativaSelecionada] = useState<number | null>(null);
-    const [questionarioAlterado] = useState<Questao[]>(embaralharPerguntas(arrayDeQuestoes))
+    const [questionarioAlterado] = useState<Questao[]>(arrayDeQuestoes)
     const [respostas, setRespostas] = useState<(string | null)[]>(Array(questionarioAlterado.length).fill(null));
     const [relogio, setRelogio] = useState(3000)
 
