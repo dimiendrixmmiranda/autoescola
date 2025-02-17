@@ -31,8 +31,6 @@ export default function Questionario({ arrayDeQuestoes }: QuestionarioProps) {
         return () => clearInterval(timer)
     }, [relogio])
 
-    
-
     function handleSelecionarAlternativa(optionIndex: number): void {
         setAlternativaSelecionada(optionIndex);
 
